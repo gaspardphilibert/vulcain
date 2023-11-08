@@ -66,10 +66,17 @@ func WithLogger(logger *zap.Logger) Option {
 	}
 }
 
+func WithApiUrl(apiUrl string) Option {
+	return func(o *opt) {
+		o.apiUrl = apiUrl
+	}
+}
+
 type opt struct {
 	openAPIFile      string
 	enableEarlyHints bool
 	maxPushes        int
+	apiUrl			 string
 	logger           *zap.Logger
 }
 
@@ -80,6 +87,7 @@ type Vulcain struct {
 	pushers          *pushers
 	openAPI          *openAPI
 	logger           *zap.Logger
+	apiUrl			 string
 }
 
 // New creates a Vulcain instance
@@ -106,6 +114,7 @@ func New(options ...Option) *Vulcain {
 		&pushers{maxPushes: opt.maxPushes, pusherMap: make(map[string]*waitPusher), logger: opt.logger},
 		o,
 		opt.logger,
+		opt.apiUrl,
 	}
 }
 
@@ -276,7 +285,9 @@ func (v *Vulcain) addPreloadHeader(h http.Header, link string, nopush bool) {
 	if nopush {
 		suffix = "; nopush"
 	}
-
+	if len(v.apiUrl) > 0 {
+		link = v.apiUrl + link
+	}
 	h.Add("Link", "<"+link+">; rel=preload; as=fetch"+suffix)
 	v.logger.Debug("link preload header added", zap.String("relation", link))
 }

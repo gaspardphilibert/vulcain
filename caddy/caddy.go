@@ -36,6 +36,8 @@ type Vulcain struct {
 	// To eable 103 Early Hints responses
 	EarlyHints bool `json:"early_hints,omitempty"`
 
+	ApiUrl string `json:"api_url,omitempty"`
+
 	vulcain *vulcain.Vulcain
 	logger  *zap.Logger
 }
@@ -59,6 +61,7 @@ func (v *Vulcain) Provision(ctx caddy.Context) error {
 		vulcain.WithOpenAPIFile(v.OpenAPIFile),
 		vulcain.WithMaxPushes(v.MaxPushes),
 		vulcain.WithLogger(ctx.Logger(v)),
+		vulcain.WithApiUrl(v.ApiUrl),
 	}
 
 	if v.EarlyHints {
@@ -145,6 +148,12 @@ func (v *Vulcain) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 
 			case "early_hints":
 				v.EarlyHints = true
+
+			case "api_url":
+				if !d.NextArg() {
+					return d.ArgErr()
+				}
+				v.ApiUrl = d.Val()
 			}
 		}
 	}
