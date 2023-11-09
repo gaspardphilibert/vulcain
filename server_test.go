@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dunglas/vulcain/fixtures/api"
+	"github.com/gaspardphilibert/vulcain/fixtures/api"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/net/http2"
 )

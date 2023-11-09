@@ -1,8 +1,8 @@
-module github.com/dunglas/vulcain/caddy
+module github.com/gaspardphilibert/vulcain/caddy
 
 go 1.21
 
-replace github.com/dunglas/vulcain => ../
+replace github.com/gaspardphilibert/vulcain => ../
 
 replace (
 	// some packages must match versions defined in go.mod of caddyserver/caddy/v2
@@ -13,12 +13,13 @@ replace (
 
 require (
 	github.com/caddyserver/caddy/v2 v2.7.5
-	github.com/dunglas/vulcain v1.0.0
+	github.com/gaspardphilibert/vulcain v1.0.0
 	go.uber.org/automaxprocs v1.5.3
 	go.uber.org/zap v1.26.0
 )
 
 require (
+	cloud.google.com/go/iam v1.1.2 // indirect
 	filippo.io/edwards25519 v1.0.0 // indirect
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
 	github.com/BurntSushi/toml v1.3.2 // indirect
@@ -142,7 +143,6 @@ require (
 	go.opentelemetry.io/contrib/propagators/jaeger v1.17.0 // indirect
 	go.opentelemetry.io/contrib/propagators/ot v1.17.0 // indirect
 	go.opentelemetry.io/otel v1.19.0 // indirect
-	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.16.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.19.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.19.0 // indirect
 	go.opentelemetry.io/otel/metric v1.19.0 // indirect
@@ -163,7 +163,6 @@ require (
 	golang.org/x/term v0.13.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/tools v0.14.0 // indirect
-	google.golang.org/genproto v0.0.0-20231002182017-d307bd883b97 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20231009173412-8bfb1ae86b6c // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231009173412-8bfb1ae86b6c // indirect
 	google.golang.org/grpc v1.58.3 // indirect

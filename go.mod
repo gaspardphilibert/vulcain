@@ -1,4 +1,4 @@
-module github.com/dunglas/vulcain
+module github.com/gaspardphilibert/vulcain
 
 go 1.21
 

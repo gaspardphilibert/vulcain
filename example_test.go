@@ -10,7 +10,7 @@ import (
 	"net/http/httputil"
 	"net/url"
 
-	"github.com/dunglas/vulcain"
+	"github.com/gaspardphilibert/vulcain"
 )
 
 func Example() {

@@ -3,7 +3,7 @@ package main
 import (
 	_ "github.com/joho/godotenv/autoload"
 
-	"github.com/dunglas/vulcain"
+	"github.com/gaspardphilibert/vulcain"
 )
 
 func main() {

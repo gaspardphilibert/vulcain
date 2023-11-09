@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dunglas/vulcain/fixtures/api"
+	"github.com/gaspardphilibert/vulcain/fixtures/api"
 )
 
 func main() {

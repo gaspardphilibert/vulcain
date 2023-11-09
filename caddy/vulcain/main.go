@@ -8,7 +8,7 @@ import (
 
 	// plug in Caddy modules here.
 	_ "github.com/caddyserver/caddy/v2/modules/standard"
-	_ "github.com/dunglas/vulcain/caddy"
+	_ "github.com/gaspardphilibert/vulcain/caddy"
 )
 
 //nolint:gochecknoinits
