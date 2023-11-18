@@ -288,7 +288,7 @@ func (v *Vulcain) addPreloadHeader(h http.Header, link string, nopush bool) {
 	if len(v.apiUrl) > 0 {
 		link = v.apiUrl + link
 	}
-	h.Add("Link", "<"+link+">; rel=preload; as=fetch"+suffix)
+	h.Add("Link", "<"+link+">; crossorigin; rel=preload; as=fetch"+suffix)
 	v.logger.Debug("link preload header added", zap.String("relation", link))
 }
 
